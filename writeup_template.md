@@ -20,12 +20,12 @@ The goals / steps of this project are the following:
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+[video1]: ./examples/project_video_process.mp4 "Video"
 [image7]: ./output_images/test1_undistorted.jpg
 [image8]: ./output_images/threshold.png
 [image9]: ./output_images/prepers.png
 [image10]: ./output_images/pers.png
-[image11]: ./output_images/ot.png
+[image11]: ./output_images/output.png
 
 ## [Rubric Points](https://review.udacity.com/#!/rubrics/571/view)
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -50,7 +50,7 @@ the undistorted image is in `./output_images/test1_undistorted.jpg` which is loo
 ![alt text][image7]
 
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
-I used a combination of HSL and gradient thresholds to generate a binary image (thresholding steps at cell no.3 and cell no.4 in the ipython notebook).  first I convet image to HSL space and apply a thresholded to S channel. and in cell no.4 I use sobel x and threshold x gradient to get the final thresholded binary image which is look like this:
+I used a combination of HSL and gradient thresholds to generate a binary image (thresholding steps at cell no.3 and cell no.4 in the ipython notebook).  first I convet image to HSL space and apply a thresholded to S channel and L channel. and in cell no.4 I use sobel x and threshold x gradient to get the final thresholded binary image which is look like this:
 ![alt text][image8]
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
@@ -105,3 +105,4 @@ Here's a [link to my video result](./project_video.mp4)
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
+The parameters in the first time I use works very well in the test image but when I implement it into video some of the frams failed. so I pick up these failed frams to returning the parameters to get it work in whole video.
